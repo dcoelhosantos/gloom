@@ -9,8 +9,7 @@ A statically-typed interpreted language with two-phase execution.
 If you have Nix installed, get a complete development environment instantly:
 
 ```bash
-cabal build
-nix-shell
+cabal build && nix-shell
 ```
 
 This provides:
@@ -60,8 +59,11 @@ cabal exec which haskell
 
 # 3. Run directly
 cabal run haskell -- your-program.gloom
+```
 
-# Or copy the executable to current directory for convenience
+Or copy the executable to current directory for convenience:
+
+```bash
 cabal build
 cp $(cabal list-bin haskell) ./gloom.exe  # Windows: gloom.exe, Linux/Mac: gloom
 ./gloom.exe your-program.gloom            # Now you can run it directly
