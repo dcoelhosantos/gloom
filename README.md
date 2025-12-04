@@ -23,6 +23,7 @@ This provides:
 For active development, use the setup script:
 
 ```bash
+cabal build
 source ./setup-env.sh
 ```
 
