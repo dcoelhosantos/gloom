@@ -9,6 +9,7 @@ A statically-typed interpreted language with two-phase execution.
 If you have Nix installed, get a complete development environment instantly:
 
 ```bash
+cabal build
 nix-shell
 ```
 
@@ -23,7 +24,6 @@ This provides:
 For active development, use the setup script:
 
 ```bash
-cabal build
 source ./setup-env.sh
 ```
 
