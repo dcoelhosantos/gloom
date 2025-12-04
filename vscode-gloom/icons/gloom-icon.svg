@@ -1,0 +1,25 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="moonGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a5568;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d3748;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="64" cy="64" r="60" fill="#1a202c"/>
+  
+  <!-- Crescent moon -->
+  <path d="M 64 12 A 52 52 0 1 0 64 116 A 42 42 0 1 1 64 12 Z" 
+        fill="url(#moonGradient)" 
+        stroke="#718096" 
+        stroke-width="2"/>
+  
+  <!-- Small crater highlights -->
+  <circle cx="50" cy="45" r="6" fill="#2d3748" opacity="0.5"/>
+  <circle cx="68" cy="65" r="4" fill="#2d3748" opacity="0.5"/>
+  <circle cx="55" cy="75" r="5" fill="#2d3748" opacity="0.5"/>
+  
+  <!-- Gloom text (optional) -->
+  <text x="64" y="125" font-family="monospace" font-size="14" fill="#a0aec0" text-anchor="middle" font-weight="bold">GLOOM</text>
+</svg>

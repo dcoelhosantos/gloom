@@ -1,0 +1,117 @@
+{
+  "name": "gloom-language",
+  "displayName": "Gloom Language Support",
+  "description": "Syntax highlighting and language support for Gloom programming language",
+  "version": "0.1.0",
+  "publisher": "gloom-lang",
+  "icon": "icons/gloom-icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JJoaoll/C4"
+  },
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "dependencies": {
+    "vscode-languageclient": "^8.0.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "keywords": [
+    "gloom",
+    "programming language",
+    "interpreter",
+    "syntax highlighting"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "gloom",
+        "aliases": [
+          "Gloom",
+          "gloom"
+        ],
+        "extensions": [
+          ".gloom"
+        ],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./icons/gloom-icon.png",
+          "dark": "./icons/gloom-icon.png"
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "gloom",
+        "scopeName": "source.gloom",
+        "path": "./syntaxes/gloom.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "gloom",
+        "path": "./snippets/gloom.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "gloom.check",
+        "title": "Gloom: Check File",
+        "category": "Gloom"
+      },
+      {
+        "command": "gloom.run",
+        "title": "Gloom: Run File",
+        "category": "Gloom"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "gloom.check",
+        "key": "f7",
+        "when": "editorLangId == gloom"
+      }
+    ],
+    "problemMatchers": [
+      {
+        "name": "gloom",
+        "owner": "gloom",
+        "fileLocation": "absolute",
+        "pattern": {
+          "regexp": "^\"(.*)\"\\s+\\(line\\s+(\\d+),\\s+column\\s+(\\d+)\\):\\s*(.*)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "message": 4
+        }
+      }
+    ],
+    "taskDefinitions": [
+      {
+        "type": "gloom",
+        "required": [
+          "file"
+        ],
+        "properties": {
+          "file": {
+            "type": "string",
+            "description": "The Gloom file to check or run"
+          }
+        }
+      }
+    ]
+  },
+  "activationEvents": [
+    "onLanguage:gloom"
+  ],
+  "main": "./extension.js",
+  "scripts": {
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.80.0",
+    "vsce": "^2.15.0"
+  }
+}

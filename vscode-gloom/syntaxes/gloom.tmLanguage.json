@@ -1,0 +1,133 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Gloom",
+  "scopeName": "source.gloom",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#keywords" },
+    { "include": "#strings" },
+    { "include": "#numbers" },
+    { "include": "#types" },
+    { "include": "#functions" },
+    { "include": "#operators" },
+    { "include": "#constants" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.gloom",
+          "match": "//.*$"
+        },
+        {
+          "name": "comment.block.gloom",
+          "begin": "/\\*",
+          "end": "\\*/"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.gloom",
+          "match": "\\b(if|else|while|for|in|break|again|return|match)\\b"
+        },
+        {
+          "name": "keyword.declaration.gloom",
+          "match": "\\b(fn|var|const|struct|variant)\\b"
+        },
+        {
+          "name": "keyword.other.gloom",
+          "match": "\\b(new|drop|import)\\b"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.gloom",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.gloom",
+          "match": "\\\\(n|t|r|\\\\|\")"
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.float.gloom",
+          "match": "\\b\\d+\\.\\d+\\b"
+        },
+        {
+          "name": "constant.numeric.integer.gloom",
+          "match": "\\b\\d+\\b"
+        }
+      ]
+    },
+    "types": {
+      "patterns": [
+        {
+          "name": "storage.type.primitive.gloom",
+          "match": "\\b(int|float|bool|text|unit)\\b"
+        },
+        {
+          "name": "entity.name.type.gloom",
+          "match": "\\b[A-Z][A-Za-z0-9_]*\\b"
+        }
+      ]
+    },
+    "functions": {
+      "patterns": [
+        {
+          "name": "support.function.builtin.gloom",
+          "match": "\\b(print|printf|scan|int2float|float2int)\\b"
+        },
+        {
+          "name": "entity.name.function.gloom",
+          "match": "\\b[a-z_][a-zA-Z0-9_]*(?=\\s*\\()"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.comparison.gloom",
+          "match": "(==|!=|<=|>=|<|>)"
+        },
+        {
+          "name": "keyword.operator.logical.gloom",
+          "match": "(&&|\\|\\||!)"
+        },
+        {
+          "name": "keyword.operator.arithmetic.gloom",
+          "match": "(\\+|\\-|\\*|/|%)"
+        },
+        {
+          "name": "keyword.operator.assignment.gloom",
+          "match": "="
+        },
+        {
+          "name": "keyword.operator.reference.gloom",
+          "match": "&|\\*(?!\\s*[\\*/])"
+        },
+        {
+          "name": "keyword.operator.array.gloom",
+          "match": "(\\+\\+|::|<<|>>|<\\|)"
+        }
+      ]
+    },
+    "constants": {
+      "patterns": [
+        {
+          "name": "constant.language.boolean.gloom",
+          "match": "\\b(true|false)\\b"
+        },
+        {
+          "name": "constant.language.null.gloom",
+          "match": "\\bnull\\b"
+        }
+      ]
+    }
+  }
+}

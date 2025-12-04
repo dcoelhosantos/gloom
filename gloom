@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# gloom-wrapper.sh - Wrapper script para executar o Gloom
+# 
+# Este script localiza e executa o binário Gloom automaticamente.
+# Pode ser usado em scripts ou chamado diretamente.
+
+set -e
+
+# Localiza o binário
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+BINARY_PATH=$(find "$SCRIPT_DIR/dist-newstyle" -name "haskell" -type f -executable 2>/dev/null | head -1)
+
+if [ -z "$BINARY_PATH" ]; then
+    echo "Erro: Binário 'haskell' não encontrado." >&2
+    echo "Execute primeiro: cabal build" >&2
+    exit 1
+fi
+
+# Executa o binário com todos os argumentos
+exec "$BINARY_PATH" "$@"

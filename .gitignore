@@ -1,0 +1,39 @@
+# Haskell build artifacts
+dist/
+dist-newstyle/
+.stack-work/
+*.hi
+*.o
+*.dyn_hi
+*.dyn_o
+
+# Cabal
+cabal.project.local
+cabal.project.local~
+.ghc.environment.*
+
+# IDE/Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Generated files
+src/Lexer.hs
+src/Lexing/Lexer.hs
+dist-newstyle/build/**/autogen/
+dist-newstyle/build/**/build/
+dist-newstyle/build/**/cache/
+dist-newstyle/build/**/package.conf.inplace/
+dist-newstyle/cache/
+dist-newstyle/packagedb/
+dist-newstyle/tmp/
+
+# Test outputs
+*.out
+*.log
+
+# Local bin directory (created by setup-env.sh)
+bin/
