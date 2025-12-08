@@ -78,6 +78,13 @@ You can copy it to your project folder or add it to PATH.
 
 ---
 
-**For detailed language documentation, see the separate PDF guide (coming soon).**
+---
 
+## 📚 Documentation
+
+The official language guide covers syntax, types, and the execution model. You can download the latest version from our releases page:
+
+- **[📄 Download Gloom Language Guide (PDF)](https://github.com/dcoelhosantos/gloom/releases/download/v0.1.0/gloom-doc.pdf)**
+
+*Note: The guide corresponds to version v0.1.0 of the interpreter.*
 
